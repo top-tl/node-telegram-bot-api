@@ -1,5 +1,5 @@
 import type TelegramBot from "node-telegram-bot-api";
-import { TopTLClient } from "toptl";
+import { TopTLClient } from "@toptl/sdk";
 
 export interface PluginOptions {
   /** Auto-post interval in milliseconds (default: 30 minutes) */
