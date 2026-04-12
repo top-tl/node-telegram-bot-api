@@ -1,5 +1,5 @@
 import type TelegramBot from "node-telegram-bot-api";
-import { TopTLClient } from "@toptl/sdk";
+import { TopTL } from "@toptl/sdk";
 
 export interface PluginOptions {
   /** Auto-post interval in milliseconds (default: 30 minutes) */
@@ -15,7 +15,7 @@ export interface PluginOptions {
  * groups, and channels. Periodically posts stats to TOP.TL.
  */
 export function createTopTLPlugin(
-  client: TopTLClient,
+  client: TopTL,
   username: string,
   bot: TelegramBot,
   options?: PluginOptions,
@@ -27,7 +27,7 @@ export function createTopTLPlugin(
   const autoPost = options?.autoPost ?? true;
   let timer: ReturnType<typeof setInterval> | null = null;
 
-  bot.on("message", (msg) => {
+  bot.on("message", (msg: any) => {
     if (!msg.from) return;
 
     const chatType = msg.chat.type;
@@ -42,10 +42,10 @@ export function createTopTLPlugin(
   });
 
   async function postStats() {
-    await client.postBotStats(username, {
-      users: users.size,
-      groups: groups.size,
-      channels: channels.size,
+    await client.postStats(username, {
+      memberCount: users.size,
+      groupCount: groups.size,
+      channelCount: channels.size,
     });
   }
 
@@ -72,9 +72,10 @@ export function createTopTLPlugin(
  * Check whether a user has voted for the bot on TOP.TL.
  */
 export async function hasVoted(
-  client: TopTLClient,
+  client: TopTL,
   username: string,
   userId: number,
 ): Promise<boolean> {
-  return client.hasVoted(username, userId);
+  const res = await client.hasVoted(username, userId);
+  return (res as any).hasVoted ?? false;
 }

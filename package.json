@@ -5,10 +5,17 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "tsc",
+    "build": "npx tsc",
     "prepublishOnly": "npm run build"
   },
-  "keywords": ["telegram", "bot", "toptl", "top.tl", "stats", "votes"],
+  "keywords": [
+    "telegram",
+    "bot",
+    "@toptl/sdk",
+    "top.tl",
+    "stats",
+    "votes"
+  ],
   "author": "TOP.TL",
   "license": "MIT",
   "repository": {
@@ -21,5 +28,10 @@
   "peerDependencies": {
     "node-telegram-bot-api": ">=0.60.0"
   },
-  "files": ["dist"]
+  "files": [
+    "dist"
+  ],
+  "devDependencies": {
+    "typescript": "^6.0.2"
+  }
 }
