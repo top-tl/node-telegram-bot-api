@@ -1,3 +1,7 @@
+[![npm version](https://img.shields.io/npm/v/@toptl/node-telegram-bot-api.svg)](https://www.npmjs.com/package/@toptl/node-telegram-bot-api)
+[![npm downloads](https://img.shields.io/npm/dm/@toptl/node-telegram-bot-api.svg)](https://www.npmjs.com/package/@toptl/node-telegram-bot-api)
+[![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+
 # toptl-node-telegram-bot-api
 
 [node-telegram-bot-api](https://github.com/yagop/node-telegram-bot-api) plugin for [TOP.TL](https://top.tl) — automatically post bot stats and check user votes.
