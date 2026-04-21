@@ -1,6 +1,6 @@
 {
   "name": "@toptl/node-telegram-bot-api",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "node-telegram-bot-api plugin for TOP.TL — auto-post bot stats & check votes",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -23,7 +23,7 @@
     "url": "https://github.com/top-tl/node-telegram-bot-api.git"
   },
   "dependencies": {
-    "@toptl/sdk": ">=1.0.0"
+    "@toptl/sdk": "^1.0.1"
   },
   "peerDependencies": {
     "node-telegram-bot-api": ">=0.60.0"
@@ -32,6 +32,6 @@
     "dist"
   ],
   "devDependencies": {
-    "typescript": "^6.0.2"
+    "typescript": "^5.4.0"
   }
 }
